@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply bg-bg text-fg font-sans antialiased; margin: 0; overflow: hidden; }
+::selection { background: rgba(139, 92, 246, 0.4); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: #2a2a33; border-radius: 8px; }
+
+@layer components {
+  .input { @apply w-full rounded-xl bg-raised border border-line px-4 py-3 text-sm outline-none transition placeholder:text-mute focus:border-accent; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-medium transition disabled:opacity-50; }
+  .btn-primary { @apply btn bg-accent text-white hover:bg-accent-hover; }
+  .btn-ghost { @apply btn text-mute hover:text-fg hover:bg-raised; }
+}
